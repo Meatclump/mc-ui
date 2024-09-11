@@ -61,7 +61,7 @@ const SelectItem = React.forwardRef<React.ElementRef<typeof rxSelect.SelectItem>
 	...props
 }, forwardedRef) =>
 	<rxSelect.Item
-		className={cn("outline-none relative flex items-center text-sm leading-none text-slate-600 dark:text-slate-400 h-6 data-[disabled]:text-slate-400 dark:data-[disabled]:text-slate-600 data-[disabled]:pointer-events-none data-[highlighted]:bg-indigo-50 data-[highlighted]:ring-1 data-[highlighted]:dark:ring-0 ring-indigo-200 data-[highlighted]:text-slate-800 data-[highlighted]:dark:bg-indigo-900 data-[highlighted]:dark:text-slate-200 rounded-md ps-5 py-3 cursor-default", className)}
+		className={cn("outline-none relative flex items-center text-sm leading-none text-slate-600 dark:text-slate-400 h-6 data-[disabled]:text-slate-400 dark:data-[disabled]:text-slate-600 data-[disabled]:pointer-events-none data-[highlighted]:bg-indigo-100 data-[highlighted]:text-slate-800 data-[highlighted]:dark:bg-indigo-900 data-[highlighted]:dark:text-slate-200 rounded-md ps-5 py-3 cursor-default", className)}
 		{...props}
 		ref={forwardedRef}
 	>
