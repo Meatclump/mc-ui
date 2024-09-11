@@ -22,7 +22,7 @@ const SelectTrigger = React.forwardRef<
 >(({ children, className, ...props }, forwardedRef) =>
 	<rxSelect.SelectTrigger
 		ref={forwardedRef}
-		className={cn("flex items-center gap-2 justify-between rounded-md px-3 py-2 text-sm leading-none bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors border border-slate-400 dark:border-slate-500 data-[placeholder]:text-slate-700 dark:data-[placeholder]:text-slate-300", className)}
+		className={cn("outline-none focus-within:ring-2 ring-offset-1 ring-offset-transparent ring-indigo-200 dark:ring-indigo-950 flex items-center gap-2 justify-between rounded-md px-3 py-2 text-sm leading-none bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors border border-slate-400 dark:border-slate-500 data-[placeholder]:text-slate-700 dark:data-[placeholder]:text-slate-300", className)}
 		{...props}
 	>
 		{children}
@@ -61,7 +61,7 @@ const SelectItem = React.forwardRef<React.ElementRef<typeof rxSelect.SelectItem>
 	...props
 }, forwardedRef) =>
 	<rxSelect.Item
-		className={cn("relative flex items-center text-sm leading-none text-slate-600 dark:text-slate-400 h-6 data-[disabled]:text-slate-400 dark:data-[disabled]:text-slate-600 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-200 data-[highlighted]:text-slate-950 data-[highlighted]:dark:bg-slate-500 data-[highlighted]:dark:text-slate-950 rounded-md ps-5 py-3 cursor-default", className)}
+		className={cn("outline-none relative flex items-center text-sm leading-none text-slate-600 dark:text-slate-400 h-6 data-[disabled]:text-slate-400 dark:data-[disabled]:text-slate-600 data-[disabled]:pointer-events-none data-[highlighted]:bg-indigo-50 data-[highlighted]:ring-1 data-[highlighted]:dark:ring-0 ring-indigo-200 data-[highlighted]:text-slate-800 data-[highlighted]:dark:bg-indigo-900 data-[highlighted]:dark:text-slate-200 rounded-md ps-5 py-3 cursor-default", className)}
 		{...props}
 		ref={forwardedRef}
 	>
