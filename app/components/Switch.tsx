@@ -1,43 +1,20 @@
-import * as Switch from "@radix-ui/react-switch"
-import { useId, useState } from "react"
+import * as rxSwitch from "@radix-ui/react-switch"
+import React from "react"
 import { cn } from "~/lib/cn"
 
-type Switch = {
-	id?: string
-	name?: string
-	checked?: boolean
-	defaultChecked?: boolean
-	onCheckedChange?: React.Dispatch<React.SetStateAction<boolean>>
-	disabled?: boolean
-	required?: boolean
-	value?: string
-}
-
-export default ({
-	id,
-	name,
-	checked,
-	onCheckedChange,
-	defaultChecked,
-	disabled,
-	required,
-	value
-}: Switch) => {
-	const [isChecked, setIsChecked] = useState(checked ?? false)
-	const switchId = id ?? useId()
+const Switch = React.forwardRef<React.ElementRef<typeof rxSwitch.Root>, React.ComponentPropsWithoutRef<typeof rxSwitch.Root>>(({
+	className,
+	...props
+}, forwardedRef) => {
 	return (
-		<Switch.Root
-			id={switchId}
-			name={name}
-			checked={checked ?? isChecked}
-			defaultChecked={defaultChecked}
-			onCheckedChange={onCheckedChange ?? setIsChecked}
-			disabled={disabled}
-			required={required}
-			value={value}
-			className={cn("rounded-full bg-slate-400 dark:bg-slate-500 w-12 h-5 relative transition-colors duration-300 group-focus-within:ring-2 ring-blue-500 dark:ring-blue-300 ring-offset-1 self-center", (checked ?? isChecked) && "bg-blue-500 dark:bg-slate-100")}
+		<rxSwitch.Root
+			ref={forwardedRef}
+			className={cn("appearance-none rounded-full bg-slate-400 dark:bg-slate-500 w-12 h-5 relative transition-colors duration-300 outline-none focus-within:ring-2 ring-offset-1 ring-offset-slate-300 dark:ring-offset-slate-600 ring-indigo-200 dark:ring-indigo-950 self-center data-[state=checked]:bg-blue-500 data-[state=checked]:dark:bg-slate-100 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50")}
+			{...props}
 		>
-			<Switch.Thumb className={cn("bg-white dark:bg-slate-800 top-[.15rem] left-[.15rem] transition-[left] w-4 h-4 absolute rounded-full", (checked ?? isChecked) && "left-[1.85rem] duration-300")} />
-		</Switch.Root>
+			<rxSwitch.Thumb className={cn("bg-white dark:bg-slate-800 top-[.15rem] left-[.15rem] transition-[left] w-4 h-4 absolute rounded-full data-[state=checked]:left-[1.85rem] data-[state=checked]:duration-300 pointer-events-none")} />
+		</rxSwitch.Root>
 	)
-}
+})
+
+export { Switch }
