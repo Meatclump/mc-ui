@@ -1,104 +1,137 @@
-import * as Select from "@radix-ui/react-select"
+import * as rxSelect from "@radix-ui/react-select"
 import React from "react"
-import { FaSort } from "react-icons/fa6"
+import { FaArrowRight, FaCaretRight, FaCheck, FaChevronRight, FaSort, FaSortDown, FaSortUp } from "react-icons/fa6"
 import { cn } from "~/lib/cn"
 
-export default ({placeholder, ariaLabel}: {placeholder: string, ariaLabel: string}) => {
-	return (
-		<SelectRoot>
-			<SelectTrigger className="inline-flex items-center justify-between rounded-md px-3 py-2 text-base leading-none gap-2 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors duration-300 border border-slate-400 data-[placeholder]:text-slate-700 dark:data-[placeholder]:text-slate-300">
-				<SelectValue placeholder={placeholder} aria-label={ariaLabel} />
-				<SelectIcon>
-					<FaSort size={12} />
-				</SelectIcon>
-			</SelectTrigger>
-			<SelectPortal>
-				<SelectContent>
-					<SelectScrollUpButton />
-					<SelectViewport>
-						
-					</SelectViewport>
-					<SelectScrollDownButton />
-				</SelectContent>
-			</SelectPortal>
-		</SelectRoot>
-	)
+const Select = rxSelect.Root
+const SelectGroup = rxSelect.Group
+const SelectValue = rxSelect.Value
+
+const SelectIcon = React.forwardRef<React.ElementRef<typeof rxSelect.Icon>, React.ComponentPropsWithoutRef<typeof rxSelect.Icon>>(({
+	children,
+	...props
+}, forwardedRef) =>
+	<rxSelect.Icon {...props} ref={forwardedRef}>
+		{children}
+	</rxSelect.Icon>
+)
+
+const SelectTrigger = React.forwardRef<
+	React.ElementRef<typeof rxSelect.SelectTrigger>,
+	React.ComponentPropsWithoutRef<typeof rxSelect.SelectTrigger>
+>(({ children, className, ...props }, forwardedRef) =>
+	<rxSelect.SelectTrigger
+		ref={forwardedRef}
+		className={cn("flex items-center gap-2 justify-between rounded-md px-3 py-2 text-sm leading-none bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors border border-slate-400 dark:border-slate-500 data-[placeholder]:text-slate-700 dark:data-[placeholder]:text-slate-300", className)}
+		{...props}
+	>
+		{children}
+		<SelectIcon>
+			<FaSort size={12} className="text-slate-500" />
+		</SelectIcon>
+	</rxSelect.SelectTrigger>
+)
+
+const SelectContent = React.forwardRef<React.ElementRef<typeof rxSelect.SelectContent>, React.ComponentPropsWithoutRef<typeof rxSelect.SelectContent>>(({
+	children,
+	className,
+	position = "popper",
+	...props
+}, forwardedRef) =>
+	<rxSelect.Portal>
+		<rxSelect.Content
+			ref={forwardedRef}
+			className={cn("relative overflow-hidden bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 text-sm border border-slate-400 dark:border-slate-500 rounded-md max-h-[400px] min-w-[130px] z-[999] data-[state=open]:animate-in data-[state=open]:fade-in data-[state=open]:zoom-in-95 data-[state=open]:duration-250 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", position === "popper" && "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1", className)}
+			position={position}
+
+			{...props}
+		>
+			<SelectScrollUpButton />
+			<rxSelect.Viewport className={cn("p-1", position === "popper" && "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]")}>
+				{children}
+			</rxSelect.Viewport>
+			<SelectScrollDownButton />
+		</rxSelect.Content>
+	</rxSelect.Portal>
+)
+
+const SelectItem = React.forwardRef<React.ElementRef<typeof rxSelect.SelectItem>, React.ComponentPropsWithoutRef<typeof rxSelect.SelectItem>>(({
+	children,
+	className,
+	...props
+}, forwardedRef) =>
+	<rxSelect.Item
+		className={cn("relative flex items-center text-sm leading-none text-slate-600 dark:text-slate-400 h-6 data-[disabled]:text-slate-400 dark:data-[disabled]:text-slate-600 data-[disabled]:pointer-events-none data-[highlighted]:bg-slate-200 data-[highlighted]:text-slate-950 data-[highlighted]:dark:bg-slate-500 data-[highlighted]:dark:text-slate-950 rounded-md ps-5 py-3 cursor-default", className)}
+		{...props}
+		ref={forwardedRef}
+	>
+		<rxSelect.ItemIndicator className="absolute left-0 inline-flex items-center justify-center w-5">
+			<FaCaretRight size={12} />
+		</rxSelect.ItemIndicator>
+		<rxSelect.ItemText>
+			{children}
+		</rxSelect.ItemText>
+	</rxSelect.Item>
+)
+
+const SelectScrollUpButton = React.forwardRef<React.ElementRef<typeof rxSelect.ScrollUpButton>, React.ComponentPropsWithoutRef<typeof rxSelect.ScrollUpButton>>(({
+	children,
+	className,
+	...props
+}, forwardedRef) =>
+	<rxSelect.ScrollUpButton
+		ref={forwardedRef}
+		className={cn("flex cursor-default items-center justify-center px-1 pt-1", className)}
+		{...props}
+	>
+		<FaSortUp size={12} className="text-slate-500" />
+	</rxSelect.ScrollUpButton>
+)
+
+const SelectScrollDownButton = React.forwardRef<React.ElementRef<typeof rxSelect.ScrollDownButton>, React.ComponentPropsWithoutRef<typeof rxSelect.ScrollDownButton>>(({
+	className,
+	...props
+}, forwardedRef) =>
+	<rxSelect.ScrollDownButton
+		ref={forwardedRef}
+		className={cn("flex cursor-default items-center justify-center px-1 pb-1", className)}
+		{...props}
+	>
+		<FaSortDown size={12} className="text-slate-500" />
+	</rxSelect.ScrollDownButton>
+)
+
+const SelectSeparator = React.forwardRef<React.ElementRef<typeof rxSelect.Separator>, React.ComponentPropsWithoutRef<typeof rxSelect.Separator>>(({
+	className,
+	...props
+}, forwardedRef) =>
+	<rxSelect.Separator
+		ref={forwardedRef}
+		className={cn("mx-1 my-[6px] h-px bg-slate-300 dark:bg-slate-700", className)}
+		{...props}
+	/>
+)
+
+const SelectLabel = React.forwardRef<React.ElementRef<typeof rxSelect.Label>, React.ComponentPropsWithoutRef<typeof rxSelect.Label>>(({
+	className,
+	...props
+}, forwardedRef) =>
+	<rxSelect.Label
+		ref={forwardedRef}
+		className={cn("font-semibold px-2 text-slate-500", className)}
+		{...props}
+	/>
+)
+
+export {
+	Select,
+	SelectGroup,
+	SelectValue,
+	SelectTrigger,
+	SelectContent,
+	SelectLabel,
+	SelectItem,
+	SelectSeparator,
+	SelectScrollUpButton,
+	SelectScrollDownButton
 }
-
-export const SelectItem = React.forwardRef<React.ElementRef<typeof Select.SelectItem>, React.ComponentPropsWithoutRef<typeof Select.SelectItem>>(({ children, className, ...props }, forwardedRef) => {
-	return (
-		<Select.Item className={cn(className)} {...props} ref={forwardedRef}>
-			{children}
-		</Select.Item>
-	)
-})
-
-export const SelectIcon = React.forwardRef<React.ElementRef<typeof Select.Icon>, React.ComponentPropsWithoutRef<typeof Select.Icon>>(({children, ...props}, forwardedRef) => {
-	return (
-		<Select.Icon {...props} ref={forwardedRef}>
-			{children}
-		</Select.Icon>
-	)
-})
-
-export const SelectValue = React.forwardRef<React.ElementRef<typeof Select.SelectValue>, React.ComponentPropsWithoutRef<typeof Select.SelectValue>>(({className, ...props}, forwardRef) => {
-	return (
-		<Select.Value ref={forwardRef} className={cn(className)} {...props} />
-	)
-})
-
-export const SelectTrigger = React.forwardRef<React.ElementRef<typeof Select.SelectTrigger>, React.ComponentPropsWithoutRef<typeof Select.SelectTrigger>>(({children, className, ...props}, forwardedRef) => {
-	return (
-		<Select.SelectTrigger ref={forwardedRef} className={cn(className)} {...props}>
-			{children}
-		</Select.SelectTrigger>
-	)
-})
-
-export const SelectPortal = React.forwardRef<React.ElementRef<typeof Select.SelectPortal>, React.ComponentPropsWithoutRef<typeof Select.SelectPortal>>(({children, ...props}) => {
-	return (
-		<Select.Portal {...props}>
-			{children}
-		</Select.Portal>
-	)
-})
-
-export const SelectContent = React.forwardRef<React.ElementRef<typeof Select.SelectContent>, React.ComponentPropsWithoutRef<typeof Select.SelectContent>>(({children, className, ...props}, forwardedRef) => {
-	return (
-		<Select.Content ref={forwardedRef} className={cn(className)} {...props}>
-			{children}
-		</Select.Content>
-	)
-})
-
-export const SelectViewport = React.forwardRef<React.ElementRef<typeof Select.SelectViewport>, React.ComponentPropsWithoutRef<typeof Select.SelectViewport>>(({children, className, ...props}, forwardedRef) => {
-	return (
-		<Select.Viewport ref={forwardedRef} className={cn(className)} {...props}>
-			{children}
-		</Select.Viewport>
-	)
-})
-
-export const SelectRoot = React.forwardRef<React.ElementRef<typeof Select.Root>, React.ComponentPropsWithoutRef<typeof Select.Root>>(({children, ...props}) => {
-	return (
-		<Select.Root {...props}>
-			{children}
-		</Select.Root>
-	)
-})
-
-export const SelectScrollUpButton = React.forwardRef<React.ElementRef<typeof Select.ScrollUpButton>, React.ComponentPropsWithoutRef<typeof Select.ScrollUpButton>>(({children, className, ...props}, forwardedRef) => {
-	return (
-		<Select.ScrollUpButton ref={forwardedRef} className={cn(className)} {...props}>
-			{children}
-		</Select.ScrollUpButton>
-	)
-})
-
-export const SelectScrollDownButton = React.forwardRef<React.ElementRef<typeof Select.ScrollDownButton>, React.ComponentPropsWithoutRef<typeof Select.ScrollDownButton>>(({children, className, ...props}, forwardedRef) => {
-	return (
-		<Select.ScrollDownButton ref={forwardedRef} className={cn(className)} {...props}>
-			{children}
-		</Select.ScrollDownButton>
-	)
-})
