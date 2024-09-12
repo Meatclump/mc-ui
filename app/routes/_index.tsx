@@ -3,6 +3,7 @@ import { ButtonCard } from "~/components/demoCards/ButtonCard";
 import { CardCard } from "~/components/demoCards/CardCard";
 import { CheckboxCard } from "~/components/demoCards/CheckboxCard";
 import { DarkModeCard } from "~/components/demoCards/DarkModeCard";
+import { DialogCard } from "~/components/demoCards/DialogCard";
 import { InputCard } from "~/components/demoCards/InputCard";
 import { LabelCard } from "~/components/demoCards/LabelCard";
 import { RadioGroupCard } from "~/components/demoCards/RadioGroupCard";
@@ -32,6 +33,7 @@ export default function Index() {
 				<CardCard />
 				<ButtonCard />
 				<RadioGroupCard />
+				<DialogCard />
 			</div>
 		</div>
 	)
