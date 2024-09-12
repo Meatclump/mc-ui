@@ -10,7 +10,7 @@ const Label = React.forwardRef<React.ElementRef<typeof rxLabel.Root>, React.Comp
 	return (
 		<rxLabel.Root
 			ref={forwardedRef}
-			className={cn("text-slate-900 dark:text-white leading-9 font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-50 peer-disabled:pointer-events-none",className)}
+			className={cn("text-slate-900 dark:text-white leading-5 font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-50 peer-disabled:pointer-events-none",className)}
 			{...props}
 		>
 			{children}

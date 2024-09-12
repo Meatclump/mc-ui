@@ -5,6 +5,7 @@ import { CheckboxCard } from "~/components/demoCards/CheckboxCard";
 import { DarkModeCard } from "~/components/demoCards/DarkModeCard";
 import { InputCard } from "~/components/demoCards/InputCard";
 import { LabelCard } from "~/components/demoCards/LabelCard";
+import { RadioGroupCard } from "~/components/demoCards/RadioGroupCard";
 import { SelectCard } from "~/components/demoCards/SelectCard";
 import { SeparatorCard } from "~/components/demoCards/SeparatorCard";
 import { SwitchCard } from "~/components/demoCards/SwitchCard";
@@ -30,6 +31,7 @@ export default function Index() {
 				<InputCard />
 				<CardCard />
 				<ButtonCard />
+				<RadioGroupCard />
 			</div>
 		</div>
 	)
