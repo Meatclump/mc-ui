@@ -22,7 +22,7 @@ export const CardHeader = ({
 	className?: string
 }) => {
 	return (
-		<div className={cn("p-4 border-b border-slate-400 dark:border-slate-500", className)}>
+		<div className={cn("p-4", className)}>
 			{children}
 		</div>
 	)
@@ -64,7 +64,7 @@ export const CardContent = ({
 	className?: string
 }) => {
 	return (
-		<div className={cn("p-4 flex-1 flex", className)}>
+		<div className={cn("p-4 flex-1 flex border-t border-slate-400 dark:border-slate-500", className)}>
 			{children}
 		</div>
 	)

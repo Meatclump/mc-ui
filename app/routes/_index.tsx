@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { CardCard } from "~/components/demoCards/CardCard";
 import { CheckboxCard } from "~/components/demoCards/CheckboxCard";
 import { DarkModeCard } from "~/components/demoCards/DarkModeCard";
 import { InputCard } from "~/components/demoCards/InputCard";
@@ -16,8 +17,8 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
 	return (
-		<div className="p-4">
-			<h1 className="text-3xl dark:text-slate-200 transition-colors duration-300">Components</h1>
+		<div className="flex flex-col gap-3 p-4">
+			<h1 className="text-3xl dark:text-slate-200 transition-colors duration-300 ">Components</h1>
 			<div className="grid grid-cols-3 gap-4">
 				<DarkModeCard />
 				<SwitchCard />
@@ -26,6 +27,7 @@ export default function Index() {
 				<SeparatorCard />
 				<LabelCard />
 				<InputCard />
+				<CardCard />
 			</div>
 		</div>
 	)
