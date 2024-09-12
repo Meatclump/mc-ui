@@ -1,24 +1,25 @@
 import { CardContent, CardDescription, CardHeader, CardTitle, CardWrapper } from "../Card"
-import { Input } from "../Input"
-import { Label } from "../Label"
+import { Button } from "../Button"
 
-const LabelCard = () => {
+const ButtonCard = () => {
 	return (
 		<CardWrapper>
 			<CardHeader>
 				<CardTitle>
-					Label
+					Button
 				</CardTitle>
 				<CardDescription>
-					Accessible label associated with control elements.
+					A button.
 				</CardDescription>
 			</CardHeader>
 			<CardContent className="min-h-[200px] max-h-[300px] items-center justify-center">
-				<div className="flex gap-3 justify-center items-center">
-					<Label htmlFor="sample-label-input">
-						Sample Label
-					</Label>
-					<Input id="sample-label-input" />
+				<div className="flex gap-2">
+					<Button>
+						Default Button
+					</Button>
+					<Button variant="contrast">
+						Contrast Button
+					</Button>
 				</div>
 			</CardContent>
 		</CardWrapper>
@@ -26,5 +27,5 @@ const LabelCard = () => {
 }
 
 export {
-	LabelCard
+	ButtonCard
 }

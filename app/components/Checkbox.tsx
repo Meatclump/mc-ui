@@ -9,7 +9,7 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof rxCheckbox.Root>, Reac
 			ref={forwardedRef}
 			{...props}
 			className={cn(
-				"group h-5 w-5 border border-slate-400 dark:border-slate-500 bg-white hover:bg-slate-100 data-[state=checked]:bg-slate-400 data-[state=checked]:hover:bg-slate-500 dark:bg-slate-800 dark:hover:data-[state=unchecked]:bg-slate-900 dark:hover:data-[state=checked]:bg-slate-600 dark:data-[state=checked]:bg-slate-500 transition-colors rounded disabled:cursor-not-allowed shrink-0 disabled:opacity-50 disabled:pointer-events-none outline-none focus-within:ring-2 ring-offset-1 ring-offset-slate-300 dark:ring-offset-slate-600 ring-indigo-200 dark:ring-indigo-950",
+				"group h-5 w-5 border border-slate-400 dark:border-slate-500 bg-white hover:border-slate-600 data-[state=checked]:bg-slate-400 data-[state=checked]:hover:border-slate-600 dark:bg-slate-800 dark:hover:data-[state=unchecked]:bg-slate-900 dark:hover:data-[state=checked]:bg-slate-600 dark:data-[state=checked]:bg-slate-500 transition-colors rounded disabled:cursor-not-allowed shrink-0 disabled:opacity-50 disabled:pointer-events-none outline-none focus-within:ring-2 ring-offset-1 ring-offset-slate-300 dark:ring-offset-slate-600 ring-indigo-200 dark:ring-indigo-950",
 				className
 			)}
 		>

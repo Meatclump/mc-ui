@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { ButtonCard } from "~/components/demoCards/ButtonCard";
 import { CardCard } from "~/components/demoCards/CardCard";
 import { CheckboxCard } from "~/components/demoCards/CheckboxCard";
 import { DarkModeCard } from "~/components/demoCards/DarkModeCard";
@@ -28,6 +29,7 @@ export default function Index() {
 				<LabelCard />
 				<InputCard />
 				<CardCard />
+				<ButtonCard />
 			</div>
 		</div>
 	)

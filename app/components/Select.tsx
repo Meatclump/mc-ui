@@ -22,7 +22,7 @@ const SelectTrigger = React.forwardRef<
 >(({ children, className, ...props }, forwardedRef) =>
 	<rxSelect.SelectTrigger
 		ref={forwardedRef}
-		className={cn("outline-none focus-within:ring-2 ring-offset-1 ring-offset-transparent ring-indigo-200 dark:ring-indigo-950 flex items-center gap-2 justify-between rounded-md px-3 py-2 text-sm leading-none bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors border border-slate-400 dark:border-slate-500 data-[placeholder]:text-slate-700 dark:data-[placeholder]:text-slate-300", className)}
+		className={cn("outline-none focus-within:ring-2 ring-offset-1 ring-offset-transparent ring-indigo-200 dark:ring-indigo-950 flex items-center gap-2 justify-between rounded-md px-3 py-2 text-sm leading-none bg-white dark:bg-slate-800 hover:border-slate-600 dark:hover:bg-slate-900 transition-colors border border-slate-400 dark:border-slate-500 data-[placeholder]:text-slate-700 dark:data-[placeholder]:text-slate-300", className)}
 		{...props}
 	>
 		{children}
