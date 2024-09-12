@@ -7,7 +7,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(({className, ...pro
 	return (
 		<input
 			ref={forwardedRef}
-			className={cn("bg-white text-slate-700 dark:text-slate-300 hover:bg-slate-100 hover:dark:bg-slate-900 transition-colors dark:bg-slate-800 px-2 py-1 rounded-md border border-slate-400 dark:border-slate-500 selection:dark:text-white selection:text-slate-700 selection:bg-slate-300 selection:dark:bg-slate-700 outline-none focus-within:ring-2 ring-offset-1 ring-indigo-200 dark:ring-indigo-950 ring-offset-transparent",className)}
+			className={cn("bg-white text-slate-700 dark:text-slate-300 hover:bg-slate-100 hover:dark:bg-slate-900 transition-colors dark:bg-slate-800 px-2 py-1 rounded-md border border-slate-400 dark:border-slate-500 selection:dark:text-white selection:text-slate-700 selection:bg-slate-300 selection:dark:bg-slate-700 outline-none focus-within:ring-2 ring-offset-1 ring-indigo-200 dark:ring-indigo-950 ring-offset-transparent disabled:pointer-events-none disabled:opacity-50",className)}
 			{...props}
 		/>
 	)

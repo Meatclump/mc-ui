@@ -1,6 +1,6 @@
-import { Label } from "@radix-ui/react-label"
 import { CardContent, CardDescription, CardHeader, CardTitle, CardWrapper } from "../Card"
 import { Input } from "../Input"
+import { Label } from "../Label"
 
 const InputCard = () => {
 	return (
