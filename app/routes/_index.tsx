@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { CheckboxCard } from "~/components/premades/CheckboxCard";
 import { DarkModeCard } from "~/components/premades/DarkModeCard";
 import { SelectCard } from "~/components/premades/SelectCard";
 import { SwitchCard } from "~/components/premades/SwitchCard";
@@ -18,6 +19,7 @@ export default function Index() {
 				<DarkModeCard />
 				<SwitchCard />
 				<SelectCard />
+				<CheckboxCard />
 			</div>
 		</div>
 	)

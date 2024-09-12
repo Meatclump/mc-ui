@@ -30,7 +30,7 @@ const DarkMode = () => {
 				>
 					<span
 						data-state={darkMode ? "checked" : "unchecked"}
-						className={cn("bg-yellow-400 rounded-full absolute top-[.15rem] left-[.1rem] w-6 h-6 transition-[left] duration-300 data-[state=checked]:left-[2.35rem] data-[state=checked]:bg-blue-600")}
+						className={cn("bg-yellow-400 group-hover:bg-yellow-300 rounded-full absolute top-[.15rem] left-[.1rem] w-6 h-6 transition-[left] duration-300 data-[state=checked]:left-[2.35rem] data-[state=checked]:bg-blue-600 group-hover:data-[state=checked]:bg-blue-700 group-hover:drop-shadow-lg")}
 					/>
 					<FaSun
 						data-state={darkMode ? "checked" : "unchecked"}
