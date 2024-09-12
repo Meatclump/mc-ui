@@ -1,5 +1,6 @@
 import { CardContent, CardDescription, CardHeader, CardTitle, CardWrapper } from "../Card"
 import { Checkbox } from "../Checkbox"
+import { Label } from "../Label"
 
 const CheckboxCard = () => {
 	return (
@@ -13,7 +14,12 @@ const CheckboxCard = () => {
 				</CardDescription>
 			</CardHeader>
 			<CardContent className="min-h-[200px] max-h-[300px] items-center justify-center">
-				<Checkbox />
+				<div className="flex items-center gap-2">
+					<Checkbox id="sample-checkbox" />
+					<Label htmlFor="sample-checkbox">
+						Sample Checkbox
+					</Label>
+				</div>
 			</CardContent>
 		</CardWrapper>
 	)
