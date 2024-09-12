@@ -13,7 +13,29 @@ const SeparatorCard = () => {
 				</CardDescription>
 			</CardHeader>
 			<CardContent className="min-h-[200px] max-h-[300px] items-center justify-center">
-				<Separator orientation="vertical" />
+				<div className="flex flex-col">
+					<p>
+						Demonstration of separator element.
+					</p>
+					<Separator />
+					<div className="flex">
+						<p>
+							Here
+						</p>
+						<Separator orientation="vertical" />
+						<p>
+							Are
+						</p>
+						<Separator orientation="vertical" />
+						<p>
+							Some
+						</p>
+						<Separator orientation="vertical" />
+						<p>
+							Words
+						</p>
+					</div>
+				</div>
 			</CardContent>
 		</CardWrapper>
 	)
