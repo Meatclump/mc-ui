@@ -10,11 +10,11 @@ const RadioGroupCard = () => {
 					Radio Group
 				</CardTitle>
 				<CardDescription>
-					Checkable buttons where only one can be checked at a time.
+					Checkable buttons where only one can be checked at a time. Name is set on RadioGroup element. Radix inserts hidden inputs if placed in form element.
 				</CardDescription>
 			</CardHeader>
 			<CardContent className="min-h-[200px] max-h-[300px] items-center justify-center">
-				<RadioGroup>
+				<RadioGroup name="sample-radio-group">
 					<div className="shrink flex flex-col gap-2">
 						<div className="flex gap-1 items-center">
 							<RadioButton id="sample-radio-button-1" value="1" />
