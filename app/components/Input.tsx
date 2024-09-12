@@ -3,7 +3,10 @@ import { cn } from "~/lib/cn"
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>{}
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(({className, ...props}, forwardedRef) => {
+const Input = React.forwardRef<HTMLInputElement, InputProps>(({
+	className,
+	...props
+}, forwardedRef) => {
 	return (
 		<input
 			ref={forwardedRef}
