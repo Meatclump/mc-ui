@@ -14,9 +14,9 @@ const InputCard = () => {
 				</CardDescription>
 			</CardHeader>
 			<CardContent className="min-h-[200px] max-h-[300px] items-center justify-center">
-				<div className="flex gap-3 justify-center items-center">
+				<div className="flex flex-col gap-1">
 					<Label htmlFor="sample-input">
-						Sample Label
+						Sample Input
 					</Label>
 					<Input id="sample-input" />
 				</div>
