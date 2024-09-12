@@ -18,7 +18,7 @@ const SeparatorCard = () => {
 						Demonstration of separator element.
 					</p>
 					<Separator />
-					<div className="flex">
+					<div className="flex h-5">
 						<p>
 							Here
 						</p>
