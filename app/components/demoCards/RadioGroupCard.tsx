@@ -16,19 +16,19 @@ const RadioGroupCard = () => {
 			<CardContent className="min-h-[200px] max-h-[300px] items-center justify-center">
 				<RadioGroup name="sample-radio-group">
 					<div className="shrink flex flex-col gap-2">
-						<div className="flex gap-1 items-center">
+						<div className="flex gap-2 items-center">
 							<RadioButton id="sample-radio-button-1" value="1" />
 							<Label htmlFor="sample-radio-button-1">
 								Sample Item 1
 							</Label>
 						</div>
-						<div className="flex gap-1 items-center">
+						<div className="flex gap-2 items-center">
 							<RadioButton id="sample-radio-button-2" value="2" />
 							<Label htmlFor="sample-radio-button-2">
 								Sample Item 2
 							</Label>
 						</div>
-						<div className="flex gap-1 items-center">
+						<div className="flex gap-2 items-center">
 							<RadioButton id="sample-radio-button-3" value="3" />
 							<Label htmlFor="sample-radio-button-3">
 								Sample Item 3
