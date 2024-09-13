@@ -37,7 +37,7 @@ const DialogContent = React.forwardRef<React.ElementRef<typeof rxDialog.Content>
 			className={cn(
 				"data-[state=open]:animate-in data-[state=open]:zoom-in-95 data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-3",
 				"data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-3",
-				"fixed z-50 top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] max-h-[85vh] w-[90vw] max-w-[450px] rounded-md dark:bg-slate-800 dark:text-slate-300 px-4 py-6",
+				"fixed z-50 top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] max-h-[85vh] w-[90vw] max-w-[450px] rounded-md bg-stone-100 dark:bg-slate-800 dark:text-slate-300 px-4 py-6",
 				className
 			)}
 			{...props}
@@ -75,7 +75,7 @@ const DialogDescription = React.forwardRef<React.ElementRef<typeof rxDialog.Desc
 	return (
 		<rxDialog.Description
 			ref={forwardedRef}
-			className={cn("text-sm dark:text-slate-400", className)}
+			className={cn("text-sm text-slate-700 dark:text-slate-400", className)}
 			{...props}
 		>
 			{children}
