@@ -6,14 +6,14 @@ import {
 	ScrollRestoration,
 } from "@remix-run/react";
 import "./tailwind.css";
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "./lib/cn";
 import { darkModeContext } from "./components/DarkMode";
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	const [darkMode, setDarkMode] = useState(true)
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const storedDarkModeValue = window.localStorage.getItem("darkMode")
 		if (storedDarkModeValue) setDarkMode(storedDarkModeValue === "true")
 	}, [])

@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { AccordionCard } from "~/components/demoCards/AccordionCard";
 import { ButtonCard } from "~/components/demoCards/ButtonCard";
 import { CardCard } from "~/components/demoCards/CardCard";
 import { CheckboxCard } from "~/components/demoCards/CheckboxCard";
@@ -34,6 +35,7 @@ export default function Index() {
 				<ButtonCard />
 				<RadioGroupCard />
 				<DialogCard />
+				<AccordionCard />
 			</div>
 		</div>
 	)
