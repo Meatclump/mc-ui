@@ -63,8 +63,8 @@ const AccordionContent = React.forwardRef<React.ElementRef<typeof rxAccordion.Co
 		<rxAccordion.Content
 			ref={forwardRef}
 			className={cn(
-				"data-[state=closed]:animate-accordion-up duration-300",
-				"data-[state=open]:animate-accordion-down duration-300",
+				"data-[state=closed]:animate-accordion-up",
+				"data-[state=open]:animate-accordion-down",
 				"px-3 border-slate-400 dark:bg-slate-700 bg-stone-100 text-slate-800 dark:text-slate-100",
 				className
 			)}
