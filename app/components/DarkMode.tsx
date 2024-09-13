@@ -1,4 +1,4 @@
-import { createContext, useContext, useId } from "react"
+import { createContext, useContext, useEffect, useId } from "react"
 import { FaMoon, FaSun } from "react-icons/fa6"
 import { cn } from "~/lib/cn"
 
@@ -12,6 +12,14 @@ export const darkModeContext = createContext<DarkModeContext>({darkMode: false, 
 const DarkMode = () => {
 	const { darkMode, setDarkMode } = useContext(darkModeContext)
 	const id = useId()
+
+	const handleChange = () => {
+		setDarkMode(prevState => {
+			window.localStorage.setItem("darkMode", (!prevState).toString())
+			return !prevState
+		})
+	}
+
 	return (
 		<div className="group">
 			<input
@@ -19,7 +27,7 @@ const DarkMode = () => {
 				id={id}
 				className="sr-only"
 				checked={darkMode}
-				onChange={() => setDarkMode(prevState => !prevState)}
+				onChange={() => handleChange()}
 				aria-checked={darkMode}
 				data-state={darkMode ? "checked" : "unchecked"}
 			/>
