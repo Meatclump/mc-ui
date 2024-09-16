@@ -44,7 +44,7 @@ const AccordionTrigger = React.forwardRef<React.ElementRef<typeof rxAccordion.Tr
 		<rxAccordion.Header className="flex">
 			<rxAccordion.Trigger
 				ref={forwardRef}
-				className={cn("bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-300 px-3 py-1 flex-1 flex justify-between items-center [&[data-state=open]>svg]:rotate-180 transition-all hover:bg-slate-900 active:bg-slate-950", className)}
+				className={cn("bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-300 px-3 py-1 flex-1 flex justify-between items-center [&[data-state=open]>svg]:rotate-180 transition-all hover:bg-slate-100 active:bg-slate-200 dark:hover:bg-slate-900 dark:active:bg-slate-950", className)}
 				{...props}
 			>
 				{children}
