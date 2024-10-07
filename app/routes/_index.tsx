@@ -3,10 +3,13 @@ import { AccordionCard } from "~/components/demoCards/AccordionCard";
 import { ButtonCard } from "~/components/demoCards/ButtonCard";
 import { CardCard } from "~/components/demoCards/CardCard";
 import { CheckboxCard } from "~/components/demoCards/CheckboxCard";
+import { CommandCard } from "~/components/demoCards/CommandCard";
 import { DarkModeCard } from "~/components/demoCards/DarkModeCard";
 import { DialogCard } from "~/components/demoCards/DialogCard";
+import DraggableListCard from "~/components/demoCards/DraggableListCard";
 import { InputCard } from "~/components/demoCards/InputCard";
 import { LabelCard } from "~/components/demoCards/LabelCard";
+import { PopoverCard } from "~/components/demoCards/PopoverCard";
 import { RadioGroupCard } from "~/components/demoCards/RadioGroupCard";
 import { SelectCard } from "~/components/demoCards/SelectCard";
 import { SeparatorCard } from "~/components/demoCards/SeparatorCard";
@@ -36,6 +39,9 @@ export default function Index() {
 				<RadioGroupCard />
 				<DialogCard />
 				<AccordionCard />
+				<DraggableListCard />
+				<PopoverCard />
+				<CommandCard />
 			</div>
 		</div>
 	)
