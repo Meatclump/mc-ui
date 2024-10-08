@@ -39,7 +39,7 @@ export default function Index() {
 				<RadioGroupCard />
 				<DialogCard />
 				<AccordionCard />
-				<DraggableListCard />
+				{/* <DraggableListCard /> */}
 				<PopoverCard />
 				<CommandCard />
 			</div>
