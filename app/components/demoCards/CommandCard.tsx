@@ -10,7 +10,7 @@ const CommandCard = () => {
 					Command Card
 				</CardTitle>
 				<CardDescription>
-					Fast, composable, unstyled command menu for React by pacocoursey.
+					Fast, composable, command menu for React by pacocoursey.
 				</CardDescription>
 			</CardHeader>
 			<CardContent className="min-h-[200px] max-h-[300px] items-center justify-center">

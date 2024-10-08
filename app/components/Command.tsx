@@ -63,7 +63,7 @@ const CommandEmpty = React.forwardRef<React.ElementRef<typeof CMDKCommand.Empty>
 	<CMDKCommand.Empty
 		ref={forwardedRef}
 		className={cn(
-			"py-6 text-center text-sm",
+			"py-3 text-center text-sm",
 			className
 		)}
 		{...props}
