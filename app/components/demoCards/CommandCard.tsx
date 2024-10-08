@@ -22,7 +22,7 @@ const CommandCard = () => {
 							<CommandItem>Item 1</CommandItem>
 							<CommandItem>Thing 1</CommandItem>
 						</CommandGroup>
-						<CommandSeparator className="border border-black" />
+						<CommandSeparator />
 						<CommandGroup heading="Section 2">
 							<CommandItem disabled>
 								Disabled Item
