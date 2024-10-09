@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useId } from "react"
+import { createContext, useContext, useId } from "react"
 import { FaMoon, FaSun } from "react-icons/fa6"
 import { cn } from "~/lib/cn"
 
