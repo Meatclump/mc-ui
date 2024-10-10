@@ -1,4 +1,3 @@
-import { Separator } from "@radix-ui/react-select"
 import { CardContent, CardDescription, CardHeader, CardTitle, CardWrapper } from "../Card"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectTrigger, SelectValue } from "../Select"
 
