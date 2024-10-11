@@ -2,7 +2,7 @@ import { createContext, useContext, useId } from "react"
 import { FaMoon, FaSun } from "react-icons/fa6"
 import { cn } from "~/lib/cn"
 
-type DarkModeContext = {
+interface DarkModeContext {
 	darkMode: boolean,
 	setDarkMode: React.Dispatch<React.SetStateAction<boolean>>
 }
