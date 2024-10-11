@@ -21,7 +21,7 @@ const DarkMode = () => {
 	}
 
 	return (
-		<div className="group">
+		<div className="group inline-block">
 			<input
 				type="checkbox"
 				id={id}
