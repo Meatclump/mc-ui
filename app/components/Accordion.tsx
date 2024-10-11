@@ -27,7 +27,7 @@ const AccordionItem = React.forwardRef<React.ElementRef<typeof rxAccordion.Item>
 	return (
 		<rxAccordion.Item
 			ref={forwardRef}
-			className={cn("group first:rounded-t-md last:rounded-b-md overflow-hidden border-x border-t last:border-b border-slate-400", className)}
+			className={cn("first:rounded-t-md last:rounded-b-md overflow-hidden border-x border-t last:border-b border-slate-400", className)}
 			{...props}
 		>
 			{children}

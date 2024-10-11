@@ -21,7 +21,7 @@ const DarkMode = () => {
 	}
 
 	return (
-		<div className="group inline-block">
+		<div className="group/darkMode inline-block">
 			<input
 				type="checkbox"
 				id={id}
@@ -34,11 +34,11 @@ const DarkMode = () => {
 			<label htmlFor={id} className="flex gap-1 cursor-pointer">
 				<div
 					data-state={darkMode ? "checked" : "unchecked"}
-					className={cn("group rounded-full bg-slate-400 w-16 h-7 relative transition-colors duration-300 group-focus-within:ring-2 ring-offset-1 ring-offset-slate-300 dark:ring-offset-slate-600 ring-indigo-200 dark:ring-indigo-950 self-center data-[state=checked]:bg-slate-800 outline-none")}
+					className={cn("rounded-full bg-slate-400 w-16 h-7 relative transition-colors duration-300 group-focus-within/darkMode:ring-2 ring-offset-1 ring-offset-slate-300 dark:ring-offset-slate-600 ring-indigo-200 dark:ring-indigo-950 self-center data-[state=checked]:bg-slate-800 outline-none")}
 				>
 					<span
 						data-state={darkMode ? "checked" : "unchecked"}
-						className={cn("bg-yellow-400 group-hover:bg-yellow-300 rounded-full absolute top-[.15rem] left-[.1rem] w-6 h-6 transition-[left] duration-300 data-[state=checked]:left-[2.35rem] data-[state=checked]:bg-blue-600 group-hover:data-[state=checked]:bg-blue-700 group-hover:drop-shadow-lg")}
+						className={cn("bg-yellow-400 group-hover/darkMode:bg-yellow-300 rounded-full absolute top-[.15rem] left-[.1rem] w-6 h-6 transition-[left] duration-300 data-[state=checked]:left-[2.35rem] data-[state=checked]:bg-blue-600 group-hover/darkMode:data-[state=checked]:bg-blue-700 group-hover/darkMode:drop-shadow-lg")}
 					/>
 					<FaSun
 						data-state={darkMode ? "checked" : "unchecked"}
