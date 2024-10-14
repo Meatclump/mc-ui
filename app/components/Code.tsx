@@ -1,5 +1,56 @@
 import { cn } from "~/lib/cn"
 
+interface Imported {
+	name: string,
+	alias?: string
+}
+interface ImportProps {
+	importAll?: string,
+	defaultImported?: string,
+	imported?: Imported[],
+	importedFrom: string
+}
+const Import = ({ importAll, defaultImported, imported, importedFrom }: ImportProps) => {
+	return (
+		<>
+			<HL color="fuchsia">import</HL>
+			{importAll &&
+				<>
+					{" "}<HL color="blue">*</HL>
+					{" "}<HL color="fuchsia">as</HL>
+					{" "}<HL color="teal">{importAll}</HL>
+				</>
+			}
+			{defaultImported &&
+				<>
+					{" "}<HL color="teal">{defaultImported}</HL>
+					{imported && ","}
+				</>
+			}
+			{imported &&
+				<>
+					{" "}<HL color="amber"><LB /></HL>
+					{imported?.map((entry, index) => 
+						<>
+							{" "}<HL color="teal">{entry.name}</HL>
+							{entry.alias &&
+								<>
+									{" "}<HL color="fuchsia">as</HL> <HL color="teal">{entry.alias}</HL>
+								</>
+							}
+							{imported.length !== index +1 &&
+								","
+							}
+						</>
+					)}
+					{" "}<HL color="amber"><RB /></HL>
+				</>
+			}
+			{" "}<HL color="fuchsia">from</HL>{" "}
+			<HL color="orange">"{importedFrom}"</HL>;<NL /></>
+	)
+}
+
 interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
 	href: string
 }
@@ -100,6 +151,7 @@ const RB = () => {
 }
 
 export {
+	Import,
 	Anchor,
 	Command,
 	CodeBlock,

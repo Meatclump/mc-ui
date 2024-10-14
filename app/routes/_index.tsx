@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~/components/Accordion";
-import { Anchor, Command as CLI, CodeBlock, HL, LT, GT, LB, RB, NL, Tab } from "~/components/Code";
+import { Anchor, Command as CLI, CodeBlock, HL, LT, GT, LB, RB, NL, Tab, Import } from "~/components/Code";
 import { AccordionCard } from "~/components/demoCards/AccordionCard";
 import { ButtonCard } from "~/components/demoCards/ButtonCard";
 import { CardCard } from "~/components/demoCards/CardCard";
@@ -71,8 +71,8 @@ export default function Index() {
 									Create the cn util in <code className="dark:text-slate-300 dark:bg-slate-600 px-1.5 py-0.5 rounded-md">app/lib</code>:
 								</p>
 								<CodeBlock>
-									<HL color="fuchsia">import</HL> <HL color="amber"><LB /></HL> <HL color="teal">ClassValue</HL>, <HL color="teal">clsx</HL> <HL color="amber"><RB /></HL> <HL color="fuchsia">from</HL> <HL color="orange">"clsx"</HL>;<NL />
-									<HL color="fuchsia">import</HL> <HL color="amber"><LB /></HL> <HL color="teal">twMerge</HL> <HL color="amber"><RB /></HL> <HL color="fuchsia">from</HL> <HL color="orange">"tailwind-merge"</HL>;<NL />
+									<Import imported={[{name: "ClassValue"}, {name: "clsx"}]} importedFrom="clsx" />
+									<Import imported={[{name: "twMerge"}]} importedFrom="tailwind-merge" />
 									<NL />
 									<HL color="fuchsia">export</HL> <HL color="blue">const</HL> <HL color="yellow">cn</HL> = <HL color="amber">(</HL>...<HL color="teal">inputs</HL>: <HL color="green">ClassValue</HL><HL color="fuchsia">[]</HL><HL color="amber">)</HL> <HL color="blue">=<GT /></HL> <HL color="amber"><LB /></HL><NL />
 									<Tab /><HL color="fuchsia">return</HL> <HL color="yellow">twMerge</HL><HL color="fuchsia">(</HL><HL color="yellow">clsx</HL><HL color="blue">(</HL><HL color="teal">inputs</HL><HL color="blue">)</HL><HL color="fuchsia">)</HL><NL />
